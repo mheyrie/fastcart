@@ -40,7 +40,11 @@ function HeaderSlider() {
     setCurrentSlide(index);
   }
   return (
-    <div>HeaderSlider</div>
+    <div className="overflow-hidden relative w-full">
+      <div className="flex transition-transform duration-700 ease-in-out" style={{transform: `translateX(-${currentSlide * 100}%)`}}>
+
+      </div>
+    </div>
   )
 }
 export default HeaderSlider
