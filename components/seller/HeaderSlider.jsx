@@ -47,7 +47,7 @@ function HeaderSlider() {
         className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
-        {sliderData.map((slide, index) => {
+         {sliderData.map((slide, index) => (
           <div
             key={slide.id}
             className="flex flex-col-reverse md:flex-row items-center justify-between bg-[#E6E9F2] py-8 md:px-14 px-5 mt-6 rounded-xl min-w-full"
@@ -63,11 +63,7 @@ function HeaderSlider() {
                 </button>
                 <button className="group flex items-center gap-2 px-6 py-2.5 font-medium">
                   {slide.buttonText2}
-                  <Image
-                    className="group-hover:translate-x-1 transition"
-                    src={assets.arrow_icon}
-                    alt="arrow_icon"
-                  />
+                  <Image className="group-hover:translate-x-1 transition" src={assets.arrow_icon} alt="arrow_icon" />
                 </button>
               </div>
             </div>
@@ -79,7 +75,7 @@ function HeaderSlider() {
               />
             </div>
           </div>
-        })}
+        ))}
       </div>
       <div className="flex items-center justify-center gap-2 mt-8">
         {sliderData.map((_, index) => (
