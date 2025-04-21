@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import { AppContextProvider } from "@/context/AppContext";
 
 const outfit = Outfit({
   weight: ["300", "400", "500"],

@@ -1,6 +1,5 @@
 "use client";
 import { productsDummyData, userDummyData } from "@/assets/assets";
-import App from "next/app";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -22,20 +21,35 @@ export const AppContextProvider = (props) => {
   const fetchProductData = async () => {
     setProducts(productsDummyData);
   };
-  const  value={
-        products,
-        userData,
-        setUserData,
-        isSeller,
-        setIsSeller,
-        cartItems,
-        setCartItems,
-        currency,
-      }
-    
+
+  const fetchUserData = async () => {
+    setUserData(userDummyData);
+  };
+
+  const addToCart = async(itemId) => {
+    let cartData = structuredClone(cartItems);
+    if(cartData[itemId]) {
+      cartData[itemId] += 1;
+    }
+    else {
+      cartData[itemId] = 1;
+    }
+    setCartItems(cartData);
+  }
+
+
+  const value = {
+    products,
+    userData,
+    setUserData,
+    isSeller,
+    setIsSeller,
+    cartItems,
+    setCartItems,
+    currency,
+  };
+
   return (
-    <AppContext.Provider value={value}>    
-      {props.children}
-    </AppContext.Provider>
+    <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
   );
 };
