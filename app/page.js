@@ -1,3 +1,4 @@
+'use client';
 import Banner from "@/components/seller/Banner";
 import FeaturedProduct from "@/components/seller/FeaturedProduct";
 import Footer from "@/components/seller/Footer";
