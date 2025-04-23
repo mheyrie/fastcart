@@ -1,3 +1,4 @@
+import { assets } from "@/assets/assets";
 import Image from "next/image";
 
 function Banner() {
@@ -12,7 +13,13 @@ function Banner() {
         <h2 className="text-2xl md:text-3xl font-semibold max-w-[290px] ">
           Level Up Your Gaming Experience
         </h2>
-        <p className="max-w-[343px]"></p>
+        <p className="max-w-[343px] font-medium text-gray-800/60">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam magni impedit cumque saepe necessitatibus.
+        </p>
+        <button className="group flex items-center justify-center gap-1 px-12 py-2.5 bg-orange-600 rounded text-white">
+          Buy now
+          <Image className="group-hover:translate-x-1 transition" src={assets.md_controller_image} alt="md_controller_image"/>
+        </button>
       </div>
     </div>
   );
