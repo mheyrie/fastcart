@@ -21,7 +21,7 @@ function Banner() {
           <Image className="group-hover:translate-x-1 transition" src={assets.md_controller_image} alt="md_controller_image"/>
         </button>
       </div>
-      <Image className="hidden md:block max-w-80"/>
+      <Image className="hidden md:block max-w-80" src={assets.md_controller_image} alt="md_controller_image" />
     </div>
   );
 }
