@@ -22,6 +22,7 @@ function Banner() {
         </button>
       </div>
       <Image className="hidden md:block max-w-80" src={assets.md_controller_image} alt="md_controller_image" />
+      <Image className="md:hidden" src={assets.sm_controller_image} alt="sm_controller_image" />
     </div>
   );
 }
