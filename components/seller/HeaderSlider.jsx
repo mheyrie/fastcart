@@ -30,6 +30,7 @@ function HeaderSlider() {
     },
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,6 +42,9 @@ function HeaderSlider() {
   const handleNext = (index) => {
     setCurrentSlide(index);
   };
+   const extendedSliderData = [...sliderData, sliderData[0]]; // Duplicate the first slide for seamless transition
+
+
   return (
     <div className="overflow-hidden relative w-full">
       <div
