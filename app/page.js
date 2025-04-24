@@ -1,11 +1,11 @@
 'use client';
-import Banner from "@/components/seller/Banner";
-import FeaturedProduct from "@/components/seller/FeaturedProduct";
-import Footer from "@/components/seller/Footer";
-import HeaderSlider from "@/components/seller/HeaderSlider";
-import HomeProducts from "@/components/seller/HomeProducts";
-import Navbar from "@/components/seller/Navbar";
-import NewsLetter from "@/components/seller/NewsLetter";
+import Banner from "@/components/Banner";
+import FeaturedProduct from "@/components/FeaturedProduct";
+import Footer from "@/components/Footer";
+import HeaderSlider from "@/components/HeaderSlider";
+import HomeProducts from "@/components/HomeProducts";
+import Navbar from "@/components/Navbar";
+import NewsLetter from "@/components/NewsLetter";
 
 
 export default function Home() {
