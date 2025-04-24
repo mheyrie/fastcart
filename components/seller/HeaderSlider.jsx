@@ -31,7 +31,9 @@ function HeaderSlider() {
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  
+
+  const extendedSliderData = [...sliderData, sliderData[0]]; // Duplicate the first slide for seamless transition
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % sliderData.length);
@@ -42,8 +44,6 @@ function HeaderSlider() {
   const handleNext = (index) => {
     setCurrentSlide(index);
   };
-   const extendedSliderData = [...sliderData, sliderData[0]]; // Duplicate the first slide for seamless transition
-
 
   return (
     <div className="overflow-hidden relative w-full">
@@ -51,7 +51,7 @@ function HeaderSlider() {
         className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
-         {sliderData.map((slide, index) => (
+        {sliderData.map((slide, index) => (
           <div
             key={slide.id}
             className="flex flex-col-reverse md:flex-row items-center justify-between bg-[#E6E9F2] py-8 md:px-14 px-5 mt-6 rounded-xl min-w-full"
@@ -67,7 +67,11 @@ function HeaderSlider() {
                 </button>
                 <button className="group flex items-center gap-2 px-6 py-2.5 font-medium">
                   {slide.buttonText2}
-                  <Image className="group-hover:translate-x-1 transition" src={assets.arrow_icon} alt="arrow_icon" />
+                  <Image
+                    className="group-hover:translate-x-1 transition"
+                    src={assets.arrow_icon}
+                    alt="arrow_icon"
+                  />
                 </button>
               </div>
             </div>
