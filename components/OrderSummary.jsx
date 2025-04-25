@@ -1,6 +1,6 @@
 import { addressDummyData } from "@/assets/assets";
 import { useAppContext } from "@/context/AppContext"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function OrderSummary() {
 
@@ -12,6 +12,19 @@ function OrderSummary() {
   const fetchUserAddress = async ()=>{
 setUserAddresses(addressDummyData)
   }
+
+  const handleAddressSelect = (address)=>{
+    setSelectedAddress(address);
+    setIsDropdownOpen(false)
+  }
+
+  const createOrder = async ()=>{
+    
+  }
+
+  useEffect(()=>{
+    fetchUserAddress()
+  }, [])
 
   return (
     <div>OrderSummary</div>
