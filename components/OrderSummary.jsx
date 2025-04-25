@@ -1,4 +1,18 @@
+import { addressDummyData } from "@/assets/assets";
+import { useAppContext } from "@/context/AppContext"
+import { useState } from "react"
+
 function OrderSummary() {
+
+  const {currency, router, getCartCount, getCartAmount} = useAppContext()
+  const [selectedAddress, setSelectedAddress]=useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [userAddresses, setUserAddresses] = useState([])
+
+  const fetchUserAddress = async ()=>{
+setUserAddresses(addressDummyData)
+  }
+
   return (
     <div>OrderSummary</div>
   )
