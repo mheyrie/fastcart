@@ -29,7 +29,7 @@ function OrderSummary() {
      <hr className="border-gray-500/30 my-5"/>
      <div className="space-y-6">
       <div className="">
-       <label className="text-base font-medium">Select Address</label>
+       <label className="text-base font-medium uppercase text-gray-700 focus:outline-none">Select Address</label>
       </div>
      </div>
     </div>
