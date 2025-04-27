@@ -27,7 +27,7 @@ setUserAddresses(addressDummyData)
   }, [])
 
   return (
-    <div className="w-full">
+    <div className="w-full md:w-96 bg-gray-500/5 p-5">
       <h2 className="text-xl">Order Summary</h2>
     </div>
   )
