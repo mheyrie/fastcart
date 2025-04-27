@@ -27,7 +27,9 @@ setUserAddresses(addressDummyData)
   }, [])
 
   return (
-    <div>OrderSummary</div>
+    <div className="w-full">
+      <h2 className="text-xl">Order Summary</h2>
+    </div>
   )
 }
 export default OrderSummary
