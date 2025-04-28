@@ -26,12 +26,14 @@ function OrderSummary() {
   return (
     <div className="w-full md:w-96 bg-gray-500/5 p-5">
       <h2 className="text-xl md:text-2xl">Order Summary</h2>
-     <hr className="border-gray-500/30 my-5"/>
-     <div className="space-y-6">
-      <div className="">
-       <label className="text-base font-medium uppercase text-gray-700 focus:outline-none">Select Address</label>
+      <hr className="border-gray-500/30 my-5" />
+      <div className="space-y-6">
+        <div className="">
+          <label className="text-base font-medium uppercase text-gray-700 focus:outline-none">
+            Select Address
+          </label>
+        </div>
       </div>
-     </div>
     </div>
   );
 }
