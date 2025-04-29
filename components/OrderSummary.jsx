@@ -82,7 +82,9 @@ function OrderSummary() {
             )}
           </div>
         </div>
-        <div className=""></div>
+        <div className="">
+          <label htmlFor="">Promo Code</label>
+        </div>
       </div>
     </div>
   );
