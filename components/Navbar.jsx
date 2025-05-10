@@ -3,11 +3,12 @@ import { assets } from "@/assets/assets";
 import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "./theme/ThemeToggle";
 
 function Navbar() {
   const { isSeller, router } = useAppContext();
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700 bg-orange-50 dark:bg-black dark:text-gray-200">
+    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700 bg-orange-50 dark:bg-gray-800 dark:text-gray-200">
       <Image
         src={assets.logo}
         alt="Logo"
@@ -15,7 +16,10 @@ function Navbar() {
         onClick={() => router.push("/")}
       />
       <div className="flex items-center gap-4 lg:gap-8 max-md:hidden">
-        <Link href="/" className="hover:text-gray-900 transition">
+        <Link
+          href="/"
+          className="hover:text-gray-900 dark:hover:text-gray-200 transition"
+        >
           Home
         </Link>
         <Link href="/all-products" className="hover:text-gray-900 transition">
@@ -52,6 +56,10 @@ function Navbar() {
         <button className="flex items-center gap-2 hover:text-gray-900 transition">
           <Image src={assets.user_icon} alt="user icon" /> Account
         </button>
+      </div>
+      <div className="w-6">
+        {" "}
+        <ThemeToggle />
       </div>
     </nav>
   );
