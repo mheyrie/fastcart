@@ -7,7 +7,7 @@ import Link from "next/link";
 function Navbar() {
   const { isSeller, router } = useAppContext();
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700 bg-orange-50">
+    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700 bg-orange-50 dark:bg-black dark:text-gray-200">
       <Image
         src={assets.logo}
         alt="Logo"
