@@ -40,7 +40,7 @@ const Product = () => {
             src={assets.arrow_right_icon_colored}
             alt="arrow_right_icon_colored"
           />
-          Continue Shopping
+          Back
         </button>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="px-5 lg:px-16 xl:px-20">

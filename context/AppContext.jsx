@@ -2,6 +2,7 @@
 import { productsDummyData, userDummyData } from "@/assets/assets";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export const AppContext = createContext();
 
@@ -33,6 +34,7 @@ export const AppContextProvider = (props) => {
     } else {
       cartData[itemId] = 1;
     }
+    toast.success("Item added to cart");
     setCartItems(cartData);
   };
 
@@ -43,6 +45,7 @@ export const AppContextProvider = (props) => {
     } else {
       cartData[itemId] = quantity;
     }
+    toast.success("Cart updated");
     setCartItems(cartData);
   };
 
