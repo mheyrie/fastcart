@@ -1,30 +1,32 @@
+import React from "react";
 import { assets } from "@/assets/assets";
-import { products } from "@/assets/productData";
-import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
+import { useAppContext } from "@/context/AppContext";
 
-function ProductCard({ product }) {
+const ProductCard = ({ product }) => {
   const { currency, router } = useAppContext();
+
   return (
     <div
       onClick={() => {
-        router.push("/product/" + products._id);
+        router.push("/product/" + product._id);
         scrollTo(0, 0);
       }}
       className="flex flex-col items-start gap-0.5 max-w-[200px] w-full cursor-pointer"
     >
       <div className="cursor-pointer group relative bg-gray-500/10 rounded-lg w-full h-52 flex items-center justify-center">
-      <Image
+        <Image
           src={product.image[0]}
           alt={product.name}
           className="group-hover:scale-105 transition object-cover w-4/5 h-4/5 md:w-full md:h-full"
           width={800}
           height={800}
         />
-        <button className="absolute top-2 right-2bg-wite p-2 rounded-full shadow-md">
-          <Image src={assets.heart_icon} alt="heart icon" className="w-3 h-3" />
+        <button className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md">
+          <Image className="h-3 w-3" src={assets.heart_icon} alt="heart_icon" />
         </button>
       </div>
+
       <p className="md:text-base font-medium pt-2 w-full truncate">
         {product.name}
       </p>
@@ -33,19 +35,20 @@ function ProductCard({ product }) {
       </p>
       <div className="flex items-center gap-2">
         <p className="text-xs">{4.5}</p>
-        <div className="flex items-center gap-0 5">
-          {Array.from({ lengtH: 5 }).map((_, index) => (
+        <div className="flex items-center gap-0.5">
+          {Array.from({ length: 5 }).map((_, index) => (
             <Image
               key={index}
+              className="h-3 w-3"
               src={
                 index < Math.floor(4) ? assets.star_icon : assets.star_dull_icon
               }
-              alt="star icon"
-              className="w-3 h-3"
+              alt="star_icon"
             />
           ))}
         </div>
       </div>
+
       <div className="flex items-end justify-between w-full mt-1">
         <p className="text-base font-medium">
           {currency}
@@ -57,5 +60,6 @@ function ProductCard({ product }) {
       </div>
     </div>
   );
-}
+};
+
 export default ProductCard;
