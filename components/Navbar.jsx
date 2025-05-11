@@ -56,7 +56,10 @@ function Navbar() {
             Seller Dashboard
           </button>
         )}
-        <button className="flex items-center gap-2 hover:text-gray-900 transition">
+        <button
+          className="flex items-center gap-2 hover:text-gray-900 transition"
+          onClick={openSignIn}
+        >
           <Image src={assets.user_icon} alt="user icon" /> Account
         </button>
       </div>
