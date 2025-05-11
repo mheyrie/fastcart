@@ -73,6 +73,9 @@ function Navbar() {
           Account
         </button>
       </div>
+      <div className="hidden md:flex items-center gap-4">
+        <ThemeToggle />
+      </div>
     </nav>
   );
 }
