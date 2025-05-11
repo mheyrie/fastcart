@@ -4,7 +4,7 @@ import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "./theme/ThemeToggle";
-import { useClerk } from "@clerk/nextjs";
+import { useClerk, UserButton } from "@clerk/nextjs";
 
 function Navbar() {
   const { isSeller, router, user } = useAppContext();
@@ -48,7 +48,9 @@ function Navbar() {
       <ul className="hidden md:flex items-center gap-4 ">
         <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
         {user ? (
-          <></>
+          <>
+            <UserButton />
+          </>
         ) : (
           <button
             onClick={openSignIn}
