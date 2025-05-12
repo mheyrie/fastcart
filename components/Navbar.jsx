@@ -44,7 +44,6 @@ function Navbar() {
           </button>
         )}
       </div>
-
       <ul className="hidden md:flex items-center gap-4 ">
         <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
         {user ? (
@@ -59,10 +58,9 @@ function Navbar() {
             <Image src={assets.user_icon} alt="user icon" />
             Account
           </button>
-          //
         )}
       </ul>
-
+      //TO
       <div className="flex items-center md:hidden gap-3">
         {isSeller && (
           <button
