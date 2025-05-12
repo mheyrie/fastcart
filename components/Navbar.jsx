@@ -59,6 +59,7 @@ function Navbar() {
             <Image src={assets.user_icon} alt="user icon" />
             Account
           </button>
+          //
         )}
       </ul>
 
