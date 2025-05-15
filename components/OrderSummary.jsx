@@ -112,7 +112,13 @@ function OrderSummary() {
               {Math.floor(getCartAmount() * 0.02)}
             </p>
           </div>
-          <div className="flex justify-between text-lg md:text-xl font-medium border-t pt-3"></div>{" "}
+          <div className="flex justify-between text-lg md:text-xl font-medium border-t pt-3">
+            <p>Total</p>
+            <p className="">
+              {currency}
+              {getCartAmount() + Math.floor(getCartAmount() * 0.02)}
+            </p>
+          </div>
         </div>
       </div>
     </div>
