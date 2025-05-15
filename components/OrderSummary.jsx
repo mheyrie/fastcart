@@ -98,8 +98,15 @@ function OrderSummary() {
         <hr className="border-gray-500/30 my-5" />
 
         <div className="space-y-4">
-          <div className="flex justify-between text-bas font-medium">
+          <div className="flex justify-between text-base font-medium">
             <p className="uppercase text-gray-600">Items ({getCartCount()})</p>
+            <p className="text-gray-800">
+              {currency}
+              {getCartAmount()}
+            </p>
+          </div>
+          <div className="flex justify-between text-base font-medium">
+            <p className="uppercase text-gray-600">Tax (2%)</p>
             <p className="text-gray-800">
               {currency}
               {getCartAmount()}
