@@ -95,6 +95,7 @@ function OrderSummary() {
             </button>
           </div>
         </div>
+        <hr className="border-" />
       </div>
     </div>
   );
