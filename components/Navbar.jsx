@@ -60,7 +60,7 @@ function Navbar() {
           </button>
         )}
       </ul>
-      //TODO:
+
       <div className="flex items-center md:hidden gap-3">
         {isSeller && (
           <button
