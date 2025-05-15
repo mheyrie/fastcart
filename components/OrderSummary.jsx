@@ -105,11 +105,11 @@ function OrderSummary() {
               {getCartAmount()}
             </p>
           </div>
-          <div className="flex justify-between text-base font-medium">
+          <div className="flex justify-between ">
             <p className="uppercase text-gray-600">Tax (2%)</p>
             <p className="text-gray-800">
               {currency}
-              {getCartAmount()}
+              {Math.floor(getCartAmount() * 0.02)}
             </p>
           </div>
         </div>
