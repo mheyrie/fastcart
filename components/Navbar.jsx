@@ -50,7 +50,11 @@ function Navbar() {
           <>
             <UserButton>
               <UserButton.MenuItems>
-                <UserButton.Action label="Cart" labelIcon={CartIcon} />
+                <UserButton.Action
+                  label="Cart"
+                  labelIcon={CartIcon}
+                  onClick={() => router.push("")}
+                />
               </UserButton.MenuItems>
             </UserButton>
           </>
