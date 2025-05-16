@@ -1,5 +1,5 @@
 "use client";
-import { assets } from "@/assets/assets";
+import { assets, CartIcon } from "@/assets/assets";
 import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -50,7 +50,7 @@ function Navbar() {
           <>
             <UserButton>
               <UserButton.MenuItems>
-                <UserButton.Action />
+                <UserButton.Action label="Cart" labelIcon={CartIcon} />
               </UserButton.MenuItems>
             </UserButton>
           </>
