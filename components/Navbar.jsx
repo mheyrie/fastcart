@@ -48,7 +48,11 @@ function Navbar() {
         <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
         {user ? (
           <>
-            <UserButton></UserButton>
+            <UserButton>
+              <UserButton.MenuItems>
+                <UserButton.Action />
+              </UserButton.MenuItems>
+            </UserButton>
           </>
         ) : (
           <button
