@@ -39,5 +39,7 @@ export const syncUserUpdate = inngest.createFunction(
       email: email_addresses[0].email_address,
       imageUrl: image_url,
     };
+    await connectDB();
+    await User.findByIdAndUpdate(id, userData);
   }
 );
