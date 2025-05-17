@@ -1,5 +1,5 @@
 "use client";
-import { assets, CartIcon } from "@/assets/assets";
+import { assets, BagIcon, CartIcon } from "@/assets/assets";
 import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
 import Link from "next/link";
@@ -52,8 +52,15 @@ function Navbar() {
               <UserButton.MenuItems>
                 <UserButton.Action
                   label="Cart"
-                  labelIcon={CartIcon}
+                  labelIcon={<CartIcon />}
                   onClick={() => router.push("/cart")}
+                />
+              </UserButton.MenuItems>
+              <UserButton.MenuItems>
+                <UserButton.Action
+                  label="My Orders"
+                  labelIcon={<BagIcon />}
+                  onClick={() => router.push("/my-orders")}
                 />
               </UserButton.MenuItems>
             </UserButton>
