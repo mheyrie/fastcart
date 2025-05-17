@@ -11,4 +11,7 @@ const userSchema = new mongoose.Schema(
   { minimize: false }
 );
 
-const User = mongoose.model("user", userSchema);
+//check if modal is available in db, else create a new one
+const User = mongoose.models.user || mongoose.model("user", userSchema);
+
+export default User;
