@@ -14,5 +14,9 @@ export async function GET(request) {
     return NextResponse.json({ success: true, user });
   } catch (error) {
     console.log(error);
+    return NextResponse.json({
+      success: false,
+      message: error.message,
+    });
   }
 }
