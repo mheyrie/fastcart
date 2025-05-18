@@ -27,10 +27,12 @@ export const AppContextProvider = (props) => {
   };
 
   const fetchUserData = async () => {
-    if (user.publicMetadata === "seller") {
-      setIsSeller(true);
-    }
-    setUserData(userDummyData);
+    try {
+      if (user.publicMetadata.role === "seller") {
+        setIsSeller(true);
+      }
+      setUserData(userDummyData);
+    } catch (error) {}
   };
 
   const addToCart = async (itemId) => {
