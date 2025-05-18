@@ -81,7 +81,9 @@ export const AppContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    fetchUserData();
+    if (user) {
+      fetchUserData();
+    }
   }, [user]);
 
   const value = {
