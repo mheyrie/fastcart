@@ -4,6 +4,7 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const AddProduct = () => {
   const { getToken } = useAppContext();
@@ -29,11 +30,23 @@ const AddProduct = () => {
       const token = await getToken();
       const { data } = await axios.post("/api/product/add", formData, {
         headers: {
-          Authorization: `Bearer ${getToken()}`,
-          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
         },
       });
-    } catch (error) {}
+      if (data.success) {
+        toast.success(data.message);
+        setFiles([]);
+        setName("");
+        setDescription("");
+        setCategory("Earphone");
+        setPrice("");
+        setOfferPrice("");
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
 
     for (i = 0; i < files.length; i++) {
       formData.append("images", files[i]);
