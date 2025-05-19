@@ -25,7 +25,9 @@ const AddProduct = () => {
     formData.append("description", description);
     formData.append("category", category);
     formData.append("offerPrice", offerPrice);
-
+    for (let i = 0; i < files.length; i++) {
+      formData.append("images", files[i]);
+    }
     try {
       const token = await getToken();
       const { data } = await axios.post("/api/product/add", formData, {
@@ -46,10 +48,6 @@ const AddProduct = () => {
       }
     } catch (error) {
       toast.error(error.message);
-    }
-
-    for (i = 0; i < files.length; i++) {
-      formData.append("images", files[i]);
     }
   };
 
