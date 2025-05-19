@@ -63,8 +63,8 @@ export const AppContextProvider = (props) => {
     } else {
       cartData[itemId] = 1;
     }
-    toast.success("Item added to cart");
     setCartItems(cartData);
+    toast.success("Item added to cart");
   };
 
   const updateCartQuantity = async (itemId, quantity) => {
