@@ -1,8 +1,7 @@
 "use client";
-import { productsDummyData, userDummyData } from "@/assets/assets";
+import { productsDummyData } from "@/assets/assets";
 import { useUser, useAuth } from "@clerk/nextjs";
-import { err } from "inngest/types";
-import { get, set } from "mongoose";
+import axios from "axios";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
