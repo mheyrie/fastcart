@@ -2,8 +2,12 @@
 import React, { useState } from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
+import { useAppContext } from "@/context/AppContext";
+import axios from "axios";
 
 const AddProduct = () => {
+  const { getToken } = useAppContext();
+
   const [files, setFiles] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -13,6 +17,27 @@ const AddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("price", price);
+    formData.append("description", description);
+    formData.append("category", category);
+    formData.append("offerPrice", offerPrice);
+
+    try {
+      const token = await getToken();
+      const { data } = await axios.post("/api/product/add", formData, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+    } catch (error) {}
+
+    for (i = 0; i < files.length; i++) {
+      formData.append("images", files[i]);
+    }
   };
 
   return (
