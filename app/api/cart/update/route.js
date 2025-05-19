@@ -9,10 +9,18 @@ export async function POST(request) {
     const { cartData } = await request.json();
     await connectDB();
     const user = await User.findById(userId);
-    user.cartData = cartData;
+    user.cartItems = cartData;
 
-    user.save();
+    await user.save();
 
-    NextResponse.json({ success: true, message: "Cart updated successfully" });
-  } catch (error) {}
+    return NextResponse.json({
+      success: true,
+      message: "Cart updated successfully",
+    });
+  } catch (error) {
+    return NextResponse.json({
+      success: false,
+      message: error.message,
+    });
+  }
 }
