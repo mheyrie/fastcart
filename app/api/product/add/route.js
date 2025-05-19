@@ -54,5 +54,6 @@ export async function POST(request) {
         });
       })
     );
+    const image = result.map((result) => result.secure_url);
   } catch (error) {}
 }
