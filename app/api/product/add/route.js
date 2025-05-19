@@ -19,5 +19,40 @@ export async function POST(request) {
         message: "You are not a seller",
       });
     }
+    const formData = await request.formData(); //from frontend
+    const name = formData.get("name");
+    const price = formData.get("price");
+    const description = formData.get("description");
+    const category = formData.get("category");
+    const offerPrice = formData.get("offerPrice");
+    const files = formData.getAll("images");
+
+    if (!files || files.length === 0) {
+      return NextResponse.json({
+        success: false,
+        message: "Please upload at least one image",
+      });
+    }
+
+    const result = await Promise.all(
+      files.map(async (file) => {
+        const arrayBuffer = await file.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+
+        return new Promise((resolve, reject) => {
+          const stream = cloudinary.uploader.upload_stream(
+            { resource_type: "auto" },
+            (error, result) => {
+              if (error) {
+                reject(error);
+              } else {
+                resolve(result);
+              }
+            }
+          );
+          stream.end(buffer);
+        });
+      })
+    );
   } catch (error) {}
 }
