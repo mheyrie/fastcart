@@ -85,7 +85,9 @@ const ProductList = () => {
                         onClick={() => router.push(`/product/${product._id}`)}
                         className="flex items-center gap-1 px-1.5 md:px-3.5 py-2 bg-orange-600 text-white rounded-md"
                       >
-                        <span className="hidden md:block">Visit</span>
+                        <span className="hidden md:block cursor-pointer">
+                          Visit
+                        </span>
                         <Image
                           className="h-3.5"
                           src={assets.redirect_icon}

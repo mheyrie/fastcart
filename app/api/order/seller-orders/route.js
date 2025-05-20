@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getAuth } from "@clerk/nextjs/server";
 import authSeller from "@/lib/authSeller";
-import { connect } from "mongoose";
 import connectDB from "@/config/db";
 import Address from "@/models/Address";
 import Order from "@/models/Order";
@@ -20,9 +19,9 @@ export async function GET(request) {
     const orders = await Order.find({}).populate("address items.product");
     return NextResponse.json({ success: true, orders });
   } catch (error) {
-    return NextResponse.json(
-      { success: false, message: "Error fetching orders" },
-      { status: 500 }
-    );
+    return NextResponse.json({
+      success: false,
+      message: error.message,
+    });
   }
 }
