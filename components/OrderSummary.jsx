@@ -184,7 +184,10 @@ function OrderSummary() {
           </div>
         </div>
       </div>
-      <button className="w-full bg-orange-600 text-white py-3 mt-5 hover:bg-orange-700">
+      <button
+        className="w-full bg-orange-600 text-white py-3 mt-5 hover:bg-orange-700"
+        onClick={createOrder}
+      >
         Place Order
       </button>
     </div>
