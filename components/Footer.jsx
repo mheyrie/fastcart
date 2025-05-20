@@ -5,7 +5,7 @@ function Footer() {
   //current year
   const currentYear = new Date().getFullYear();
   return (
-    <footer>
+    <footer className="bg-orange-50 dark:bg-black/80 dark:text-gray-200">
       <div className="flex flex-col md:flex-row items-start justify-center px-6 md:px-16 lg:px-32 pap-10 py-14 border-b border-gray-500/30 text-gray-500">
         <div className="w-4/5">
           <Image src={assets.logo} alt="logo" className="w-28 md:w-32" />
@@ -45,15 +45,13 @@ function Footer() {
           </div>
         </div>
         <div className="w-1/2 flex items-start justify-start md:justify-center">
-        <div className="">
-          <h2 className="font-medium text-gray-900 mb-5">
-            Get in Touch
-          </h2>
-          <div className="text-sm space-y-2">
-            <p>+1-234-456-903</p>
-            <p>contact@may.dev</p>
+          <div className="">
+            <h2 className="font-medium text-gray-900 mb-5">Get in Touch</h2>
+            <div className="text-sm space-y-2">
+              <p>+1-234-456-903</p>
+              <p>contact@may.dev</p>
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <p className="py-4 text-center text-xs md:text-sm">

@@ -98,7 +98,7 @@ function OrderSummary() {
           </label>
           <div className="relative inline-block w-full text-sm border">
             <button
-              className="peer w-full text-left px-4 pr-2 py-2 bg-white text-gray-700 focus:outline-none"
+              className="peer w-full text-left px-4 pr-2 py-2 bg-white dark:bg-gray-500 text-gray-700 focus:outline-none"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               <span>
@@ -125,7 +125,7 @@ function OrderSummary() {
             </button>
 
             {isDropdownOpen && (
-              <ul className="absolute w-full bg-white border shadow-md mt-1 z-10 py-1.5">
+              <ul className="absolute w-full bg-white dark:bg-gray-500 border shadow-md mt-1 z-10 py-1.5">
                 {userAddresses.map((address, index) => (
                   <li
                     key={index}

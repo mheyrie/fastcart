@@ -33,7 +33,7 @@ const Product = () => {
       <div className="px-6 md:px-16 lg:px-32 pt-14 space-y-10">
         <button
           onClick={() => router.push("/all-products")}
-          className="group flex items-center mt-6 gap-2 text-orange-600"
+          className="group flex items-center mt-6 gap-2 text-orange-600 cursor-pointer"
         >
           <Image
             className="group-hover:-translate-x-1 transition"
@@ -44,7 +44,7 @@ const Product = () => {
         </button>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="px-5 lg:px-16 xl:px-20">
-            <div className="rounded-lg overflow-hidden bg-gray-500/10 mb-4">
+            <div className="rounded-lg overflow-hidden bg-gray-500/10 mb-4 dark:bg-gray-500/70">
               <Image
                 src={mainImage || productData.images[0]}
                 alt="alt"

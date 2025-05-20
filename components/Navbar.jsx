@@ -11,11 +11,11 @@ function Navbar() {
   const { openSignIn } = useClerk();
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700 bg-orange-50 dark:bg-gray-800 dark:text-gray-200">
+    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700 bg-orange-50 dark:bg-black/80 dark:text-gray-200">
       <Image
         src={assets.logo}
         alt="Logo"
-        className="cursor-pointer w-28 md:w-32"
+        className="cursor-pointer w-28 md:w-32 dark:bg-gray-200 dark:rounded-md"
         onClick={() => router.push("/")}
       />
       <div className="flex items-center gap-4 lg:gap-8 max-md:hidden">
@@ -38,7 +38,7 @@ function Navbar() {
         {isSeller && (
           <button
             onClick={() => router.push("/seller")}
-            className="text-xs border px-4 py-1.5 rounded-full"
+            className="text-xs border px-4 py-1.5 rounded-full cursor-pointer hover:bg-orange-600/10 transition"
           >
             Seller Dashboard
           </button>
@@ -80,7 +80,7 @@ function Navbar() {
         {isSeller && (
           <button
             onClick={() => router.push("/seller")}
-            className="text-xs border px-4 py-1.5 rounded-full"
+            className="text-xs border px-4 py-1.5 rounded-full cursor-pointer hover:bg-orange-600/10 transition"
           >
             Seller Dashboard
           </button>

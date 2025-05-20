@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${outfit.className} antialiased text-gray-700`}
+          className={`${outfit.className} antialiased text-gray-700 dark:bg-black/80 dark:text-gray-200`}
           cz-shortcut-listen="true"
         >
           <Toaster />

@@ -45,9 +45,9 @@ const ProductList = () => {
       ) : (
         <div className="w-full md:p-10 p-4">
           <h2 className="pb-4 text-lg font-medium">All Product</h2>
-          <div className="flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20">
+          <div className="flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20 dark:bg-black/20 dark:border-gray-500/20">
             <table className=" table-fixed w-full overflow-hidden">
-              <thead className="text-gray-900 text-sm text-left">
+              <thead className="text-gray-900 dark:text-gray-400 text-sm text-left">
                 <tr>
                   <th className="w-2/3 md:w-2/5 px-4 py-3 font-medium truncate">
                     Product
@@ -65,11 +65,11 @@ const ProductList = () => {
                 {products.map((product, index) => (
                   <tr key={index} className="border-t border-gray-500/20">
                     <td className="md:px-4 pl-2 md:pl-4 py-3 flex items-center space-x-3 truncate">
-                      <div className="bg-gray-500/10 rounded p-2">
+                      <div className="bg-gray-500/10 rounded p-2 ">
                         <Image
                           src={product.images[0]}
                           alt="product Image"
-                          className="w-16"
+                          className="w-16 "
                           width={1280}
                           height={720}
                         />
