@@ -8,14 +8,17 @@ import Navbar from "@/components/Navbar";
 import Loading from "@/components/Loading";
 
 const MyOrders = () => {
-  const { currency } = useAppContext();
+  const { currency, user, getToken } = useAppContext();
 
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchOrders = async () => {
-    setOrders(orderDummyData);
-    setLoading(false);
+    try {
+      const token = await getToken();
+    } catch (error) {
+      console.error("Error fetching orders:", error);
+    }
   };
 
   useEffect(() => {

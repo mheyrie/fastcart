@@ -58,6 +58,8 @@ function OrderSummary() {
         return toast.error("Cart is empty");
       }
       const token = await getToken();
+
+      //Manually trigger  event since it doesn't exist on default clerk
       const { data } = await axios.post(
         "/api/order/create",
         { address: selectedAddress._id, items: cartItemsArray },
@@ -184,8 +186,8 @@ function OrderSummary() {
         </div>
       </div>
       <button
-        className="w-full bg-orange-600 text-white py-3 mt-5 hover:bg-orange-700"
         onClick={createOrder}
+        className="w-full bg-orange-600 text-white py-3 mt-5 hover:bg-orange-700"
       >
         Place Order
       </button>
