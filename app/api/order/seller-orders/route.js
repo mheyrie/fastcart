@@ -27,7 +27,6 @@ export async function POST(request) {
     return NextResponse.json({
       success: true,
       message: "Order placed successfully",
-      newOrder,
     });
   } catch (error) {
     return NextResponse.json({
