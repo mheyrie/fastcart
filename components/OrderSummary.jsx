@@ -1,4 +1,3 @@
-import { addressDummyData } from "@/assets/assets";
 import { useAppContext } from "@/context/AppContext";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -22,7 +21,7 @@ function OrderSummary() {
   const fetchUserAddress = async () => {
     try {
       const token = await getToken();
-      const { data } = await axios("/api/user/get-address", {
+      const { data } = await axios.get("/api/user/get-address", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -60,7 +59,7 @@ function OrderSummary() {
       }
       const token = await getToken();
       const { data } = await axios.post(
-        "/api/order/create-order",
+        "/api/order/create",
         { address: selectedAddress._id, items: cartItemsArray },
         {
           headers: {

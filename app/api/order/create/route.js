@@ -1,5 +1,3 @@
-import connectDB from "@/config/db";
-import Order from "@/models/Order";
 import { NextResponse } from "next/server";
 import { getAuth } from "@clerk/nextjs/server";
 import Product from "@/models/Product";
@@ -25,7 +23,7 @@ export async function POST(request) {
       return acc + product.offerPrice * item.quantity;
     }, 0);
 
-    await inngest({
+    await inngest.send({
       name: "order/created",
       data: {
         userId,
