@@ -56,8 +56,8 @@ function Footer() {
       </div>
       <p className="py-4 text-center text-xs md:text-sm">
         Copyright {currentYear} © All rights reserved. Powered by{" "}
-        <a href="#" className="font-medium text-gray-900 hover:underline">
-          FastCart
+        <a href="#" className="font-medium text-gray-300 hover:underline">
+          Mheyrie
         </a>
       </p>
     </footer>
